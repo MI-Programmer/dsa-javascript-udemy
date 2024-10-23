@@ -3,9 +3,21 @@
 
 // Examples:
 
-// areThereDuplicates(1, 2, 3) // false
-// areThereDuplicates(1, 2, 2) // true
-// areThereDuplicates('a', 'b', 'c', 'a') // true
+function areThereDuplicates(...items) {
+  const lookup = {};
+  for (const item of items) {
+    lookup[item] = ++lookup[item] || 1;
+  }
+  for (const key in lookup) {
+    if (lookup[key] > 1) return true;
+  }
+
+  return false;
+}
+
+console.log(areThereDuplicates(1, 2, 3)); // false
+console.log(areThereDuplicates(1, 2, 2)); // true
+console.log(areThereDuplicates("a", "b", "c", "a")); // true
 // Restrictions:
 
 // Time - O(n)

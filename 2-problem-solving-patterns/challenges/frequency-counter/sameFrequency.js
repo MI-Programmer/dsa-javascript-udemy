@@ -23,9 +23,7 @@ function sameFrequency(num1, num2) {
   }
 
   for (const digit of num2) {
-    if (!lookup[digit]) {
-      return false;
-    }
+    if (!lookup[digit]) return false;
 
     lookup[digit]--;
   }
@@ -34,6 +32,6 @@ function sameFrequency(num1, num2) {
 }
 
 console.log(sameFrequency(182, 281)); // true
-console.log(sameFrequency(34, 14)); // false
+console.log(sameFrequency(342, 144)); // false
 console.log(sameFrequency(3589578, 5879385)); // true
 console.log(sameFrequency(22, 222)); // false
